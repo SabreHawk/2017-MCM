@@ -1,4 +1,4 @@
-resourcePath = 'F:\!!!SabreHawk_PublicFolder\2017MCM\workspace\worthless_str.txt';
+resourcePath = 'F:\!!!SabreHawk_PublicFolder\2017-MCM\workspace\worthless_str.txt';
 txt = fopen([resourcePath] ,'r');
 str = [];
 while ~feof(txt)

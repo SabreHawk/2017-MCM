@@ -1,4 +1,4 @@
-resourcePath = 'F:\!!!SabreHawk_PublicFolder\2017MCM\workspace\';
+resourcePath = 'F:\!!!SabreHawk_PublicFolder\2017-MCM\workspace\';
 subfolder_num = 8;
 str_vector_sort_total=[];
 load worthless_str_vector;
@@ -10,15 +10,23 @@ for index_folder = 1 : subfolder_num
         str=[];
         while ~feof(temp_txt)
             temp_line = fgetl(temp_txt);
-            if flag==2
-                str=[str,temp_line];
+            if strfind(temp_line,'Original Messag')
+                flag = -1;
+                break;
             end
-            if flag==1
-                flag=2;
+            if flag == 2
+                str = [str,temp_line];
+            end
+            if flag == 1
+                flag = 2;
             end
             if strfind(temp_line,'X-FileName: ')
-                flag=flag+1;
+                flag = flag+1;
             end
+        end
+        if flag == -1
+            fclose(temp_txt);
+            continue;
         end
         %str是正文内容
         str_vector = string(regexp(str,' ','split'));
@@ -34,6 +42,10 @@ for index_folder = 1 : subfolder_num
         str_vector_unique = unique(str_vector);
         t = size(str_vector_unique);
         str_vector_unique_len = t(2);
+        if str_vector_unique_len > 500
+            fclose(temp_txt);
+            continue;
+        end
         
         M = zeros(str_vector_unique_len,str_vector_unique_len);
         for i = 1:str_len - 1
@@ -59,11 +71,19 @@ for index_folder = 1 : subfolder_num
             PR = 0.15 + 0.85*M*PR;
             if max(PR)<1
                 disp(PR);
+                index_folder
+                q
                 break;
             end
             if iter == 100
                 disp(PR);
+                index_folder
+                q
             end
+        end
+        if all(isnan(PR))
+            fclose(temp_txt);
+            continue;
         end
         worthless_str = worthless_str_vector;
         worthless_str_len = length(worthless_str_vector);
@@ -80,9 +100,16 @@ for index_folder = 1 : subfolder_num
         PR(index) = [];
         str_vector_unique = [str_vector_unique;PR'];
         str_vector_unique = sortrows(str_vector_unique',-2);
+        m = size(str_vector_unique);
+        str_vector_unique_new_len = m(1);
+        if str_vector_unique_new_len < 10
+            fclose(temp_txt);
+            continue;
+        end
         str_vector_sort = str_vector_unique(1:10,:);
         %[string([temp_txtDir(p).name]),string([temp_txtDir(p).name])]
         str_vector_sort = [[string([temp_txtDir(q).name]),string([temp_txtDir(q).name])];str_vector_sort];
         str_vector_sort_total = [str_vector_sort_total str_vector_sort];
+        fclose(temp_txt);
     end
 end
