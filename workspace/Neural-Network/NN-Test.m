@@ -9,11 +9,14 @@ trainNum = 400;
 testNum = email - trainNum;
 
 {%%% Read Train/test Data
+%{
 trainData_path = 'C:\Users\mySab\Documents\!!!SabreHawk_PublicFolder\2017-MCM\workspace\Neural-Network'; 
-trainData_name =  'trainData.txt';
+trainData_name = 'trainData.txt';
 input_file = fopen([trainData_path,trainData_name],'r');
+%}
 emailCount = 0;
-input_data_matrix = zeros(emialNum,species_nums+1);//input features and tags
+%input_data_matrix = zeros(emialNum,species_nums+1);%%input features and tags
+input_data_matrix = zeros(emialNum,species_nums+1);%%input features and tags
 while ~feof(input_file)
     temp_line = fget(input_file);
     if length(temp_line) == 1
@@ -42,21 +45,23 @@ output_train_matrix = input_data_matrix(1:trainNum,end);
 intpu_test_matrix = input_data_matrix(trainNum+1:end,species_totalNum);
 
 %%%Data Normailization
-[input_train_matrix,input_train_setting] = mapminmax(input_)
+[input_train_matrix,input_train_setting] = mapminmax(input_train_matrix);
+[output_train_matrix,output_train_setting] = mapminmax(output_train_matrix);
 
 %%%Initialize Neural Network
 layerNum = 128;
 nNet = newff(input_matrix,output_matrix,[layerNum],{'tansig','purelin'},'traingdx');
 %Set Train Values
-nNet = init(nNet);
 nNet.trainParam.show = 50;
 nNet.trainParam.epochs = 10000;
 nNet.trainParam.lr = 0.05;
 nNet.trainParam.goal = 0.001;
-
-
 %Train Neural Network
+nNet = train(nNet,input_train_matrix,output_train_matrix);
 
-nNet = train(net,)
+input_test_matrix = mapminmax('apply',input_test_matrix,input_train_setting);
+answer_matrix = sim(nNet,input_test_matrix);
+BP_output_matrix = mapminmax('reverse',answer_matrix)
+
 
 
