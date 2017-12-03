@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ann1 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP19D.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/ann1.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"H:\王小玉MATLAB计算方法清华PPTOK\BP朱月\ann1.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP19D.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP19E.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/ann1.pdb" /debug /machine:I386 /out:"Debug/ann1.exe" /pdbtype:sept 
+".\Debug\ann1.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP19E.tmp"
+<h3>Output Window</h3>
+Compiling...
+ann1.cpp
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(161) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(166) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(167) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(168) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(169) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(178) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(184) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(185) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(186) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(187) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(188) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(190) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(191) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(192) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(193) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(194) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(196) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(197) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(198) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(199) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(200) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(201) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(202) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(203) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(204) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(205) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(206) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(207) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(208) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(209) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+h:\王小玉matlab计算方法清华pptok\bp朱月\ann1.cpp(209) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+Linking...
+LINK : LNK6004: Debug/ann1.exe not found or not built by the last incremental link; performing full link
+
+
+
+<h3>Results</h3>
+ann1.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

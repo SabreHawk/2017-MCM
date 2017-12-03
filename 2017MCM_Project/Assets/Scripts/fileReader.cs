@@ -32,7 +32,7 @@ public class fileReader : MonoBehaviour {
 	void Update () {
 	}
 	void getFiles() {
-		DirectoryInfo tag_Dir = new DirectoryInfo("C:\\Users\\mySab\\Documents\\!!!SabreHawk_PublicFolder\\2017MCM\\workspace\\1\\");
+		DirectoryInfo tag_Dir = new DirectoryInfo("C:\\Users\\mySab\\Documents\\!!!SabreHawk_PublicFolder\\2017-MCM\\workspace\\1\\");
 		FileInfo[] txt_files_info = tag_Dir.GetFiles("*.txt");
 		string temp_line;
 		string temp_name;
@@ -117,9 +117,9 @@ public class fileReader : MonoBehaviour {
 				obj.GetComponent<Renderer> ().material.color = colorList [i];
 				Vector3 temp_scale = new Vector3 (1f, 1f, 1f);
 				if (true) {
-					temp_scale.x = Mathf.Log (temp_scale.x * tagList [i] [j].times * scale);
-					temp_scale.y = Mathf.Log (temp_scale.y * tagList [i] [j].times * scale);
-					temp_scale.z = Mathf.Log (temp_scale.z * tagList [i] [j].times * scale);
+                    temp_scale.x = Mathf.Log(temp_scale.x * (tagList[i][j].times + 1) * scale);
+                    temp_scale.y = Mathf.Log(temp_scale.y * (tagList[i][j].times + 1) * scale);
+                    temp_scale.z = Mathf.Log(temp_scale.z * (tagList[i][j].times + 1) * scale);
 				} else {
 					temp_scale.x = Mathf.Log (temp_scale.x *  scale);
 					temp_scale.y = Mathf.Log (temp_scale.y *  scale);
@@ -127,7 +127,7 @@ public class fileReader : MonoBehaviour {
 				}
 
 				obj.transform.localScale = temp_scale;
-				obj.transform.SetParent (father_obj.transform);
+				//obj.transform.SetParent (father_obj.transform);
 				authorObjList.Add (father_obj);
 				temp_list.Add (obj);
 			}
